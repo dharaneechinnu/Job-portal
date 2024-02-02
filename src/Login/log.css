@@ -1,0 +1,56 @@
+body{
+  background-color: #0F1035;
+}
+.login-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color:#0F1035;
+   
+  }
+  .Name,.password,p{
+    color: white;
+  }
+.login_title{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; 
+}
+  .center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Set height to 100% of the viewport height */
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .names_text,
+   .pwd_text {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+
+   .sub_text{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .sub_text:hover {
+    background-color: #0056b3;
+  }
+  

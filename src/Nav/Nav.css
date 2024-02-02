@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  background-color: #365486;
+  padding: 10px;
+  width: 100%; /* Make the navbar full width */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line on small screens */
+}
+
+.nav-item {
+  margin-right: 15px;
+  margin-bottom: 10px; /* Add margin-bottom for spacing between items */
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.user  {
+  display: flex;
+  color: white;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.user svg {
+  margin-right: 5px;
+  font-size: 24px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .nav-item {
+      margin-right: 10px;
+      margin-bottom: 8px;
+  }
+  .navbar{
+    width: 150%;
+  }
+  .nav-item a {
+      padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  .user svg {
+      font-size: 20px; /* Adjust font size for smaller screens */
+  }
+}

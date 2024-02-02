@@ -1,0 +1,129 @@
+/* AlPost.css */
+
+.center {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.sear {
+  font-size: 24px;
+  color: #ff69b4; /* Hot Pink color, you can change it */
+}
+
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-label {
+  font-size: 18px;
+  color: #ff69b4; /* Hot Pink color, you can change it */
+  margin-right: 10px;
+}
+
+.search-input,
+.search-inputs {
+  width: 100%; /* Use 100% for full width on smaller screens */
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #ff69b4; /* Hot Pink color, you can change it */
+  outline: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .search-input,
+  .search-inputs {
+    width: auto; /* Auto width on larger screens */
+  }
+}
+
+
+
+.search-input:focus {
+  outline: none;
+  border-color: #ff4385; /* A darker shade of Hot Pink, you can change it */
+}
+
+.title_post {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.post-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Add space between post items */
+}
+
+.all {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Center items on the container */
+  padding: 20px;
+}
+
+.post-items {
+  cursor: pointer;
+  margin-top: 30px;
+  flex: 1 1 calc(25% - 20px); /* Improved responsiveness for post items */
+  max-width: 300px; /* Set a maximum width for post items */
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Improved margin at the bottom of each post item */
+  transition: 0.3s ease-in-out;
+}
+
+.post-items:hover {
+  transform: scale(1.05);
+}
+
+.post-items {
+  background-color: #fff; /* White background, you can change it */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Soft box shadow, you can change it */
+}
+
+.titles {
+  font-size: 24px;
+  color: #010101; /* Black color, you can change it */
+}
+
+.location {
+  font-size: 18px;
+  color: #365486; /* Blue color, you can change it */
+  margin-top: 10px;
+}
+
+.bodys {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.mails,
+.numbessr,
+.timess {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.numbessr,
+.timess {
+  position: relative;
+  top: 5%;
+}
+
+.timess {
+  margin-top: 5px;
+  left: 0;
+}
