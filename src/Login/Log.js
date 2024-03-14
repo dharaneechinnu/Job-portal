@@ -1,48 +1,63 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './log.css'; // Assuming you have a CSS file for your styling
+import {  ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './log.css';
 
-const Log = ({ handleSubmit, setname, setPassword,setEmail }) => {
+const Log = ({handleSubmit,setEmail,setPassword}) => {
+ 
+
   return (
-    <div className="center-container">
-      <div className="login-container">
-        <h2 className='login_title'>Login</h2>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label className='Name'>Name:</label><br></br>
-            <input
-              type="text"
-              className='names_text'
-              onChange={(e) => setname(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label className='Name'>email:</label><br></br>
-            <input
-              type="email"
-              className='names_text'
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label className='password'>Password:</label>
-            <input
-              type="password"
-              className='pwd_text'
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <br />
-          <p>
-            Don't have an account <Link to='/register'>SignUp</Link>
-          </p>
-          <button type="submit" className='sub_text'>Login</button>
-        </form>
+    <>
+      <div className="center-containers">
+        <ToastContainer />
+        <div className="login-container">
+          <h2 className="login_title">Login</h2>
+          <form onSubmit={handleSubmit} id="loginForm">
+            <div>
+              <label className="password" htmlFor="email">
+                E-mail:
+              </label>
+              <br />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="names_text"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                autoComplete="email"
+              />
+            </div>
+            <div>
+              <label className="password" htmlFor="password">
+                Password:
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                className="pwd_text"
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                autoComplete="current-password"
+              />
+            </div>
+            <br />
+            <p>
+              Don't have an account <Link to="/Register">SignUp</Link>
+            </p>
+            <br />
+            <Link to="/Auth" className="for">
+              Forgot password?
+            </Link>
+            <button type="submit" className="sub_text">
+              Login
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

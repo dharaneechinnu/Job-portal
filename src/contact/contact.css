@@ -1,14 +1,95 @@
+.contact-page-container h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 30px;
+}
 
-.navbar {
-    background-color: #365486;
-    padding: 15px;
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-right: 50px;
+ 
+}
+
+.contact-page-container .contact-message {
+  display: flex;
+  position: relative;
+  transform: translate(15%,-100%);
+  
+  flex-direction: column;
+  align-items:start;
+  margin-left: 30px;
+  
+}
+.contact-message {
+  margin-top: 40px;
+}
+
+.contact-message h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact-message p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.contact-message label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+input[type='email']
+{
+  border: 1px solid black;
+}
+.contact-message textarea {
+  resize: vertical;
+}
+
+button[type='submit'] {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type='submit']:hover {
+  background-color: #0056b3;
+}
+
+
+@media screen and (max-width: 768px) {
+  .contact-page-container {
+    padding: 20px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
-  
-  .navbar a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
+
+  .contact-message form {
+    max-width: 100%;
   }
- 
+}

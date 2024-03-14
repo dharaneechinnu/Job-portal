@@ -2,9 +2,13 @@
 
 .center {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 100px;
+  
 }
-
+.all-post{
+  position: relative;
+  top: 20%;
+}
 .sear {
   font-size: 24px;
   color: #ff69b4; /* Hot Pink color, you can change it */
@@ -16,23 +20,47 @@
   justify-content: center;
   margin-top: 20px;
 }
-
+.pic{
+  animation: Allpostfade 3s ease; 
+}
+.pic h2{
+  position: relative;
+  top: 5%;
+  left: 25%;
+  font-size: 50px;
+}
+.pic span{
+  font-size: 100px;
+  color: rgb(9, 113, 192);
+}
 .search-label {
   font-size: 18px;
   color: #ff69b4; /* Hot Pink color, you can change it */
   margin-right: 10px;
 }
-
+@keyframes Allpostfade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.center
 .search-input,
+.center
 .search-inputs {
   width: 100%; /* Use 100% for full width on smaller screens */
   padding: 15px;
   font-size: 16px;
-  border: 2px solid #ff69b4; /* Hot Pink color, you can change it */
+  border: 2px solid #010101; /* Hot Pink color, you can change it */
   outline: none;
   border-radius: 10px;
   margin-bottom: 10px;
   margin-left: 5px;
+  margin-right: 5px;
 }
 
 /* Media query for larger screens */
@@ -43,8 +71,36 @@
   }
 }
 
+.all{
+  animation: box 3s ease;
+}
 
+@keyframes box {
+  from {
+    opacity: 0;
+    transform:scale(1.2)
+  }
+  to {
+    opacity: 1;
+    transform:scale(1.0)
+  }
+}
 
+ .back-arow{
+  position: absolute;
+  padding: 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: white;
+  color: #010101;
+  border-radius: 50%;
+  font-size: 30px;
+  cursor: pointer;
+}
+ .back-arow:hover{
+  background-color: white;
+  color: black;
+}
 .search-input:focus {
   outline: none;
   border-color: #ff4385; /* A darker shade of Hot Pink, you can change it */

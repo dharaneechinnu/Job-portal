@@ -8,68 +8,75 @@ import Home from './Home/Home';
 import CreatePost from './CreatePost/CreatePost';
 import EditPost from './EditPost/EditPost';
 import AllPost from './Allpost/AllPost';
-import Abo from './About/Abo';
+import { toast } from 'react-toastify';
 import Cont from './contact/Cont';
+import View from './Home/View';
+import About from './Home/About';
+import api from './API/api';
 
 function App() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  
   const [postTitle,setPostTitle]= useState('')
   const [postMail,setMail] = useState('')
   const [number,setnumber]= useState('');
   const [postbody,setPostBody] = useState('')
-  const [Name,setname] =useState('')
+  const [name,setname] =useState('')
+  const [names,setnames] =useState('')
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
  const [time,settime]= useState('')
   const [search, setSearch] = useState('');
-  const [userid,setuserids] = useState('')
-  const [userId,setuserId] = useState('')
+
   const[locations,setlocations] = useState('')
   const [posts, setPosts] = useState([]);
   const [userName, setUserName] = useState('');
   const history = useNavigate()
  
-    
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [userId, setUserId] = useState('');
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await Api.post('/auth', { password: password, Name: Name,email:email });
-      const { userId, Name: userName } = response.data;
-  
-      // Set the user's name in your state
-      setUserName(userName);
-      console.log(userName);
-      console.log('User ID:', userId);
-  
-      // Set userId after successful authentication
-      setuserId(userId);
-  
-      // Use 'history.push' to navigate to the '/home' route
-      history('/home');
+      const response = await api.post('/Auth/login', { email, password });
+      const { userId, role, accessToken } = response.data;
+
+      if (role === 'User') {
+        console.log(response.data);
+        console.log('User ID:', userId);
+
+        setUserId(userId)
+        localStorage.setItem('userId', userId); 
+        localStorage.setItem('accessToken', accessToken);
+
+        if (response.status === 200) {
+          console.log('Success-login');
+
+          if (role === 'User') {
+            history('/view');
+          }
+        }
+      } else {
+        history('/Register');
+        alert('Register again with another email');
+      }
     } catch (error) {
-      console.error("Error in API call:", error);
+      toast.error('Email or password wrong!');
+      console.error('Error in API call:', error);
     }
   };
   
 
-  const handlesign = async(e) =>{
-    e.preventDefault();
-    await Api.post('/user',{Name,email,password})
-    .then(users => console.log(users),
-    history('/')
-    )
-    .catch(err => console.log(err))
-
-  }
   const handleAdd = async (e) => {
     e.preventDefault();
     try {
-      // Assuming userName is the authenticated user's name
+    
       setUserName(userName);
   
       await Api.post('/add', {
-        userid,
+        userId,
+        names,
         time,
         postMail,
         postTitle,
@@ -79,7 +86,7 @@ function App() {
       })
         .then((adds) => {
           console.log(adds);
-          // Redirect to '/home' using react-router-dom history
+         
           history('/home');
         })
         .catch((error) => console.error('Error adding post:', error));
@@ -122,9 +129,9 @@ function App() {
   path='/'
   element={
     <Log
-      name={Name}
-      setname={setname}
-      password={password}
+    
+   
+    
       setPassword={setPassword}
       handleSubmit={handleSubmit}
       setEmail={setEmail}
@@ -132,9 +139,9 @@ function App() {
   }
 />
     <Route path='/register' element={<Reg
-    name={Name}
+    name={name}
     setname={setname}
-     handlesign={handlesign}
+
      email={email}
      setEmail={setEmail}
      setPassword={setPassword}
@@ -151,7 +158,7 @@ function App() {
    setLoading={setLoading}
    setPosts={setPosts}
     userName={userName}
-    userid={userid}
+    userId={userId}
     email={email}
    />}/>
    <Route path='/Job' element={<AllPost userName={userName}/>} />
@@ -165,18 +172,20 @@ function App() {
     postTitle={postTitle}
     number={number}
     postbody={postbody}
-    userId={userId}
-    setuserid={setuserId}
+    names={names}
+    setnames={setnames}
     time={time}
     settime={settime}
-    userid={userid}
-    setuserids={setuserids}
+    userid={userId}
+    setUserId={setUserId}
     locations={locations}
     setlocations={setlocations}
     />}/>
     <Route path="/edit/:id" element={<EditPost/>}/>
-    <Route path='/about' element={<Abo userName={userName}/>}/>
+ 
     <Route path='/contact' element={<Cont userName={userName}/>}/>
+    <Route path='/view' element={<View/>}/>
+    <Route path='/about' element={<About/>}/>
    </Routes>
     </>
   );

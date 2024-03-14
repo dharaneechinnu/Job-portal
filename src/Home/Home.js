@@ -1,17 +1,17 @@
 import React, {  useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import home from '../Picture/home.jpg';
 import { FaCirclePlus, FaPen, FaTrash } from "react-icons/fa6";
-import Nav from '../Nav/Nav';
+import { FaArrowLeftLong } from "react-icons/fa6";
+
 import api from '../API/api';
 
-const Home = ({ setPosts, setLoading, userName, handleDelete, loading, error, email, filteredPosts }) => {
+const Home = ({ setPosts, setLoading, handleDelete, loading, error, userId,email, filteredPosts }) => {
   useEffect(() => {
-    // Fetch posts when the component mounts
+ 
     const fetchData = async () => {
       try {
-        const response = await api.get('/posts', { params: { email: email } });
+        const response = await api.get(`/posts?userId=${userId}`);
         setPosts(response.data);
         setLoading(false);
       } catch (error) {
@@ -21,13 +21,18 @@ const Home = ({ setPosts, setLoading, userName, handleDelete, loading, error, em
     };
 
     fetchData();
-  }, [setPosts, setLoading, email]);
+  }, [setPosts, setLoading, userId]);
 
   return (
+    <>
+   
     <div>
-      <Nav userName={userName} />
+    <Link to='/view'>  <FaArrowLeftLong className='back-arow' /></Link>
       <div className="pic">
-        <img src={home} alt="" srcSet="" className="img2" />
+        
+      <h2 className='all-tag'><span>H</span>ere You can Upload Job</h2>
+        <h2 className='all-tag'><span>W</span>ere here to help Upload Job</h2>
+    
       </div>
 
       {loading ? (
@@ -53,7 +58,7 @@ const Home = ({ setPosts, setLoading, userName, handleDelete, loading, error, em
               <tbody>
                 {filteredPosts.map((post) => (
                   <tr key={post._id}>
-                    <td>{post.userid}</td>
+                    <td>{post.names}</td>
                     <td>{post.postTitle}</td>
                     <td>{post.postbody}</td>
                     <td>{post.locations}</td>
@@ -80,10 +85,11 @@ const Home = ({ setPosts, setLoading, userName, handleDelete, loading, error, em
 
       <div className="add">
         <Link to='/Add'>
-          <FaCirclePlus />
+                <FaCirclePlus />
         </Link>
       </div>
     </div>
+    </>
   );
 };
 

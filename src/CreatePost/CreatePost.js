@@ -1,8 +1,7 @@
 import React from 'react';
 import './create.css';
-import Nav from '../Nav/Nav';
 
-const CreatePost = ({ time, settime, handleAdd, postMail, postTitle, setPostTitle, setPostBody,locations,setlocations, setMail, number, setnumber, postbody, setuserids, userid }) => {
+const CreatePost = ({ time, settime, handleAdd, postMail, postTitle, setPostTitle, setPostBody,locations,setlocations, setMail, number, setnumber, postbody, setnames, names }) => {
   // Sample options for postTitle, you can replace it with your actual options
   const titleOptions = ["Driver", "Mechanic", "CareTaker"];
   const showAlert = (message) => {
@@ -19,7 +18,7 @@ const CreatePost = ({ time, settime, handleAdd, postMail, postTitle, setPostTitl
   };
   return (
     <>
-      <Nav />
+    
       <main className="NewPost">
         <h2>New Post</h2>
         <form className="newPostForm" onSubmit={handleAdd}>
@@ -29,8 +28,8 @@ const CreatePost = ({ time, settime, handleAdd, postMail, postTitle, setPostTitl
             type="text"
             placeholder='Username'
             required
-            value={userid}
-            onChange={(e) => setuserids(e.target.value)}
+            value={names}
+            onChange={(e) => setnames(e.target.value)}
           />
           <label htmlFor="postTitle">Serive Avaliable:</label>
           <select

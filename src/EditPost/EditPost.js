@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import './Edit.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import api from '../API/api';
-import Nav from '../Nav/Nav';
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 const EditPost = () => {
   const [postData, setPostData] = useState({
@@ -61,7 +62,7 @@ const EditPost = () => {
 
   return (
     <>
-      <Nav />
+       <Link to='/view'>  <FaArrowLeftLong className='back-arow' /></Link>
       <div className='edit-post-container'>
         <h2 className='edit-title'>Edit job</h2>
         

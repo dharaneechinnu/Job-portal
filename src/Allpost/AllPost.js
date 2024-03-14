@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import api from '../API/api';
 import './AlPost.css';
-import Nav from '../Nav/Nav';
-import upload from '../Picture/Upload img.jpg';
 import { FaLocationDot } from "react-icons/fa6";
-
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 const AllPost = ({ userName }) => {
   const [posts, setPosts] = useState({ create: [], private: [] });
   const [titleSearch, setTitleSearch] = useState('');
@@ -44,12 +43,14 @@ const AllPost = ({ userName }) => {
   );
 
   return (
-    <div>
-      <Nav userName={userName} />
+    <div className='all-post'>
+     <Link to='/view'>  <FaArrowLeftLong className='back-arow' /></Link>
       <div className="pic">
-        <img src={upload} alt="" className="img1" />
+       
+        <h2 className='all-tag'><span>H</span>ere You can Find Job</h2>
+        <h2 className='all-tag'><span>W</span>ere here to Find you Need</h2>
       </div>
-
+     
       <div className="center">
         <label htmlFor="titleSearch" className='sear'>Search by Title:</label>
         <input
