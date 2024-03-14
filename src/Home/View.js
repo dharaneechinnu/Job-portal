@@ -12,8 +12,8 @@ const View = () => {
     <div className="content-page">
       <div className="main-page">
         <h2>Welcome to Insta Serve</h2>
-        <h2>Quick, Fresh, and Delicious</h2>
-        <h2> Serving Satisfaction Instantly! </h2>
+        <h2>Your Instant Solution Hub </h2>
+        <h2> Connecting You with Trusted Drivers,<br/> Mechanics, Teachers, and <br/>Caretakers Online! </h2>
          <button type="submit" className='btn-app' ><Link to="/job" style={{ color: 'inherit', textDecoration: 'inherit'}}>View</Link> </button>
          <button type="submit" className='btn-app' ><Link to="/home" style={{ color: 'inherit', textDecoration: 'inherit'}}>Add Your Job</Link> </button>
       </div>

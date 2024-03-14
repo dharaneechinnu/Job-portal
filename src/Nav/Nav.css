@@ -31,12 +31,19 @@ body::-webkit-scrollbar-thumb {
 .nav-menu{
   display: flex;
   position: absolute;
-  left:15%;
-  gap: 5rem;
-
+  left:25%;
+  gap: 0rem;
+  
 }
 .log h2 {
-  margin-top: 10px;
+  margin-top: 6 0px;
+  
+}
+.log h2{
+  font-size: larger;
+  font-size: 70px;
+  margin-right: 20px;
+  margin-left: 20px;
   
 }
 ul{
@@ -46,6 +53,7 @@ ul{
 }
 .nav-menu li{
   padding: 0 1rem;
+  margin-left: 100px;
 }
 .nav-menu li a{
   font-size: 2.2rem;

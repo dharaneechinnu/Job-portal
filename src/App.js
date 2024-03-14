@@ -13,6 +13,7 @@ import Cont from './contact/Cont';
 import View from './Home/View';
 import About from './Home/About';
 import api from './API/api';
+import Footer from './Home/Footer';
 
 function App() {
   
@@ -186,6 +187,7 @@ function App() {
     <Route path='/contact' element={<Cont userName={userName}/>}/>
     <Route path='/view' element={<View/>}/>
     <Route path='/about' element={<About/>}/>
+    <Route path='/Footer' element={<Footer/>}/>
    </Routes>
     </>
   );

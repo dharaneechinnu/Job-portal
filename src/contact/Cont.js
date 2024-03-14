@@ -4,6 +4,7 @@ import React from 'react';
 import Nav from '../Nav/Nav';
 import './contact.css';
 import contact from '../assets/contact.png'
+import Footer from '../Home/Footer';
 const Cont = ({ userName }) => {
   return (
     <>
@@ -35,6 +36,7 @@ const Cont = ({ userName }) => {
       </div>
     
     </div>
+    <Footer/>
     </>
   );
 };

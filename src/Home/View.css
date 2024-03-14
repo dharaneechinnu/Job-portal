@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Ojuju:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Madimi+One&family=Ojuju:wght@200..800&display=swap');
 
 .home-page {
  
@@ -12,14 +12,16 @@
     align-items: center;
     height: 100vh;
   }
-  
+  .main-page h2{
+   
+  }
   .main-page {
     text-align: start;
     position: relative;
     top: 50px;
-    
     text-align: justify;
     animation: fadeIn 3s ease; 
+    font-family: "Arvo";  
   }
 
 .img-container {

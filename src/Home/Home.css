@@ -85,12 +85,13 @@ body::-webkit-scrollbar{
     color: #365486;
     font-size: 30px;
     cursor: pointer;
+
   }
 
 .add {
     position: fixed;
     top: 85%;
-    left: 95%;
+    left: 50%;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
