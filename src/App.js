@@ -95,15 +95,15 @@ function App() {
       console.error('Error in handleAdd:', error);
     }
   };
-  const filteredPosts = posts.filter((post) => {
-    const searchText = search.toLowerCase();
-    return (
-      post.postTitle.toLowerCase().includes(searchText) ||
-      post.postbody.toLowerCase().includes(searchText) ||
-      post.postMail.toLowerCase().includes(searchText) ||
-      String(post.number).includes(searchText)
-    );
-  });
+  // const filteredPosts = posts.filter((post) => {
+  //   const searchText = search.toLowerCase();
+  //   return (
+  //     post.postTitle.toLowerCase().includes(searchText) ||
+  //     post.postbody.toLowerCase().includes(searchText) ||
+  //     post.postMail.toLowerCase().includes(searchText) ||
+  //     String(post.number).includes(searchText)
+  //   );
+  // });
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
@@ -152,11 +152,11 @@ function App() {
    search={search}
    handleSearchChange={handleSearchChange}
    handleDelete={handleDelete}
-   filteredPosts={filteredPosts}
+   posts={posts}
    loading={loading}
    error={error}
    setError={setError}
-   setLoading={setLoading}
+   setLoading={setLoading}   
    setPosts={setPosts}
     userName={userName}
     userId={userId}

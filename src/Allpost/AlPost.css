@@ -3,123 +3,47 @@
 .center {
   text-align: center;
   margin-top: 100px;
-  
 }
-.all-post{
+
+.all-post {
   position: relative;
   top: 20%;
 }
-.sear {
-  font-size: 24px;
-  color: #ff69b4; /* Hot Pink color, you can change it */
+
+.search-label {
+  font-size: 18px;
+  color: #ff69b4; 
+  margin-right: 10px;
 }
 
-.search-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
+.pic {
+  animation: Allpostfade 3s ease;
 }
-.pic{
-  animation: Allpostfade 3s ease; 
-}
-.pic h2{
+
+.pic h2 {
   position: relative;
   top: 5%;
   left: 25%;
   font-size: 50px;
 }
-.pic span{
+
+.pic span {
   font-size: 100px;
   color: rgb(9, 113, 192);
 }
-.search-label {
-  font-size: 18px;
-  color: #ff69b4; /* Hot Pink color, you can change it */
-  margin-right: 10px;
-}
-@keyframes Allpostfade {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.center
-.search-input,
-.center
-.search-inputs {
-  width: 100%; /* Use 100% for full width on smaller screens */
+
+.search-input {
+  width: 100%; 
   padding: 15px;
   font-size: 16px;
-  border: 2px solid #010101; /* Hot Pink color, you can change it */
+  border: 2px solid #010101; 
   outline: none;
   border-radius: 10px;
   margin-bottom: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-/* Media query for larger screens */
-@media (min-width: 768px) {
-  .search-input,
-  .search-inputs {
-    width: auto; /* Auto width on larger screens */
-  }
-}
-
-.all{
-  animation: box 3s ease;
-}
-
-@keyframes box {
-  from {
-    opacity: 0;
-    transform:scale(1.2)
-  }
-  to {
-    opacity: 1;
-    transform:scale(1.0)
-  }
-}
-
- .back-arow{
-  position: absolute;
-  padding: 5px;
-  margin-top: 10px;
-  margin-left: 10px;
-  background-color: white;
-  color: #010101;
-  border-radius: 50%;
-  font-size: 30px;
-  cursor: pointer;
-}
- .back-arow:hover{
-  background-color: white;
-  color: black;
-}
-.search-input:focus {
-  outline: none;
-  border-color: #ff4385; /* A darker shade of Hot Pink, you can change it */
-}
-
-.title_post {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.post-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px; /* Add space between post items */
 }
 
 .all {
+  animation: box 3s ease;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; /* Center items on the container */
@@ -138,16 +62,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px; /* Improved margin at the bottom of each post item */
   transition: 0.3s ease-in-out;
-}
-
-.post-items:hover {
-  transform: scale(1.05);
-}
-
-.post-items {
-  background-color: #fff; /* White background, you can change it */
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Soft box shadow, you can change it */
 }
 
 .titles {
@@ -182,4 +96,58 @@
 .timess {
   margin-top: 5px;
   left: 0;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .search-input {
+    width: auto; /* Auto width on larger screens */
+  }
+}
+
+.back-arrow {
+  position: absolute;
+  padding: 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: white;
+  color: #010101;
+  border-radius: 50%;
+  font-size: 30px;
+  cursor: pointer;
+}
+.post-items .mails a{
+  display: flex;
+  flex-wrap: wrap;
+}
+.back-arrow:hover {
+  background-color: white;
+  color: black;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #ff4385; /* A darker shade of Hot Pink, you can change it */
+}
+
+@keyframes Allpostfade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes box {
+  from {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.0);
+  }
 }

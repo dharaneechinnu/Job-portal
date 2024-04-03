@@ -6,7 +6,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 
 import api from '../API/api';
 
-const Home = ({ setPosts, setLoading, handleDelete, loading, error, userId,email, filteredPosts }) => {
+const Home = ({ setPosts, setLoading, handleDelete, loading, error, userId,posts }) => {
   useEffect(() => {
  
     const fetchData = async () => {
@@ -27,7 +27,7 @@ const Home = ({ setPosts, setLoading, handleDelete, loading, error, userId,email
     <>
    
     <div>
-    <Link to='/view'>  <FaArrowLeftLong className='back-arow' /></Link>
+    <Link to='/view'>  <FaArrowLeftLong className='back-arrow' /></Link>
       <div className="pic">
         
       <h2 className='all-tag'><span>H</span>ere You can Upload Job</h2>
@@ -41,7 +41,7 @@ const Home = ({ setPosts, setLoading, handleDelete, loading, error, userId,email
         <p>{error}</p>
       ) : (
         <div className="post-list">
-          {filteredPosts.length > 0 ? (
+          {posts.length > 0 ? (
             <table>
               <thead>
                 <tr>
@@ -56,7 +56,7 @@ const Home = ({ setPosts, setLoading, handleDelete, loading, error, userId,email
                 </tr>
               </thead>
               <tbody>
-                {filteredPosts.map((post) => (
+                {posts.map((post) => (
                   <tr key={post._id}>
                     <td>{post.names}</td>
                     <td>{post.postTitle}</td>
