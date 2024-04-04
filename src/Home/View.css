@@ -4,13 +4,22 @@
  
     height: 100%;
   }
-  
+  .main-page h2{
+    color: white;
+  }
   .content-page {
     display: flex;
-    background-color: rgb(255, 255, 255);
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 100vh; 
+   
+  background-image: url('../assets/fr.jpeg');
+  background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    width: 100%;
     height: 100vh;
+    object-fit: cover;
   }
   .main-page h2{
    
@@ -85,7 +94,7 @@
     font-size: 4rem; /* Responsive font size */
     margin: 0;
     padding: 10px;
-    color: #333; /* Text color */
+    color: black; /* Text color */
   }
   
   /* Media query for responsiveness */

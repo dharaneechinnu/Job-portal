@@ -33,18 +33,26 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   left:25%;
   gap: 0rem;
-  
+
 }
 .log h2 {
   margin-top: 6 0px;
   
 }
+.log{
+  display: flex;
+}
 .log h2{
   font-size: larger;
   font-size: 70px;
-  margin-right: 20px;
-  margin-left: 20px;
-  
+  margin-left:-50px;
+}
+.log img{
+
+  width: 200px;
+  margin-left : -50px;
+  margin-bottom: 10px;
+ 
 }
 ul{
   list-style: none;

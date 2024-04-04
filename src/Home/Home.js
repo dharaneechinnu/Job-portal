@@ -30,8 +30,8 @@ const Home = ({ setPosts, setLoading, handleDelete, loading, error, userId,posts
     <Link to='/view'>  <FaArrowLeftLong className='back-arrow' /></Link>
       <div className="pic">
         
-      <h2 className='all-tag'><span>H</span>ere You can Upload Job</h2>
-        <h2 className='all-tag'><span>W</span>ere here to help Upload Job</h2>
+      <h2 className='all-tag'><span>H</span>ere You can Upload your Job</h2>
+        <h2 className='all-tag'><span>W</span>e're here to help you upload your job</h2>
     
       </div>
 
@@ -45,10 +45,10 @@ const Home = ({ setPosts, setLoading, handleDelete, loading, error, userId,posts
             <table>
               <thead>
                 <tr>
-                  <th>Username</th>
+                  <th>User name</th>
                   <th>Title</th>
                   <th>Content</th>
-                  <th>Locations</th>
+                  <th>Location</th>
                   <th>Email</th>
                   <th>Number</th>
                   <th>Time</th>

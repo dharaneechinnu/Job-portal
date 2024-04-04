@@ -92,7 +92,7 @@ const Reg = () => {
 
   return (
     <>
-      <div className="center-containers">
+      <div className="center-container">
         <ToastContainer />
         <div className="register-containers">
           <h2 className='registers_title'>Register</h2>
@@ -147,7 +147,7 @@ const Reg = () => {
               Register
             </button>
           </form><br></br>
-          <Link to='/' className='for'>I have Account</Link>
+          <Link to='/' className='for'>I Already have an Account</Link>
          
         </div>
       </div>

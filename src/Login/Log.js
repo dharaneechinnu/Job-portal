@@ -45,7 +45,7 @@ const Log = ({handleSubmit,setEmail,setPassword}) => {
             </div>
             <br />
             <p>
-              Don't have an account <Link to="/Register">SignUp</Link>
+              Don't have an account?<Link to="/Register">Create New!</Link>
             </p>
             <br />
             <Link to="/Auth" className="for">

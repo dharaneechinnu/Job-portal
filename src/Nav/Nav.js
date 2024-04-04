@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from 'react';
 import {  useNavigate } from 'react-router-dom';
-
+import logo from '../assets/lo.png'
 import './Nav.css';
 
 const Nav = () => {
@@ -60,8 +60,9 @@ const Nav = () => {
     <>
    <div className={color ? "header header-bg" : "header"}>
       <div className="log">
+       
+       <img src={logo} alt="" />
        <h2>Insta Serve</h2>
-
       </div>
       <ul className="nav-menu">
        
