@@ -5,6 +5,7 @@ import { FaCirclePlus, FaPen, FaTrash } from "react-icons/fa6";
 import { FaArrowLeftLong } from "react-icons/fa6";
 
 import api from '../API/api';
+import Loader from '../Loader/Loader';
 
 const Home = ({ setPosts, setLoading, handleDelete, loading, error, userId,posts }) => {
   useEffect(() => {
@@ -26,20 +27,21 @@ const Home = ({ setPosts, setLoading, handleDelete, loading, error, userId,posts
   return (
     <>
    
-    <div>
-    <Link to='/view'>  <FaArrowLeftLong className='back-arrow' /></Link>
-      <div className="pic">
-        
-      <h2 className='all-tag'><span>H</span>ere You can Upload your Job</h2>
-        <h2 className='all-tag'><span>W</span>e're here to help you upload your job</h2>
-    
-      </div>
-
+   
       {loading ? (
-        <p>Loading...</p>
+       <Loader/>
       ) : error ? (
         <p>{error}</p>
       ) : (
+        <div>
+        <Link to='/view'>  <FaArrowLeftLong className='back-arrow' /></Link>
+          <div className="pic">
+            
+          <h2 className='all-tag'><span>H</span>ere You can Upload your Job</h2>
+            <h2 className='all-tag'><span>W</span>e're here to help you upload your job</h2>
+        
+          </div>
+    
         <div className="post-list">
           {posts.length > 0 ? (
             <table>
@@ -81,14 +83,15 @@ const Home = ({ setPosts, setLoading, handleDelete, loading, error, userId,posts
             </div>
           )}
         </div>
+         <div className="add">
+         <Link to='/Add'>
+                 <FaCirclePlus />
+         </Link>
+       </div>
+     </div>
       )}
 
-      <div className="add">
-        <Link to='/Add'>
-                <FaCirclePlus />
-        </Link>
-      </div>
-    </div>
+     
     </>
   );
 };

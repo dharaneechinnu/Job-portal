@@ -3,7 +3,7 @@ import './create.css';
 
 const CreatePost = ({ time, settime, handleAdd, postMail, postTitle, setPostTitle, setPostBody,locations,setlocations, setMail, number, setnumber, postbody, setnames, names }) => {
   // Sample options for postTitle, you can replace it with your actual options
-  const titleOptions = ["Driver", "Mechanic", "CareTaker"];
+  const titleOptions = ["Driver", "Mechanic", "CareTaker","Teacher"];
   const showAlert = (message) => {
     alert(message);
   };
